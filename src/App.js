@@ -38,7 +38,10 @@ const App=()=>{
             <h1>{month}</h1>
 
             {
-                hemisphere && (hemisphere=="Northern Hemisphere" && month>=4 && month<=10) ||(hemisphere=="Southern Hemisphere" && (month<4  || month >10))
+                hemisphere && (
+                (hemisphere=="Northern Hemisphere" && month>=4 && month<=10) ||
+                (hemisphere=="Southern Hemisphere" && (month<4  || month >10))
+                ) &&
                 (
                     <div>
                         <h1>Summer Season</h1>
@@ -48,15 +51,20 @@ const App=()=>{
                 )
             }
 
+            
+
+
             {
-                hemisphere && (hemisphere=="Northern Hemisphere" && (month<4 || month>10)) || (hemisphere=="Southern Hemisphere" && month>=4 && month <= 10)
+                hemisphere && (
+                (hemisphere=="Northern Hemisphere" && (month<4 || month>10)) || 
+                (hemisphere=="Southern Hemisphere" && month>=4 && month <= 10) &&
                 (
                     <div>
                         <h1>Winter Season</h1>
                         <img src={winter}></img>
 
                     </div>
-                )
+                ))
             }
         </div>
     )
